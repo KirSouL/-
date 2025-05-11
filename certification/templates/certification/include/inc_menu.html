@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar bg-dark border-bottom border-body">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'certificztion:cert_list' %}">
+        <a class="navbar-brand" href="{% url 'certification:certification_list' %}">
                  class="d-inline-block align-text-top">
             Shop
         </a>
@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'certification:list_cert' %}">Домашняя страница</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'certification:certification_list' %}">Домашняя страница</a>
                 </li>
                 {% if user.is_authenticated %}
                  <li class="nav-item">

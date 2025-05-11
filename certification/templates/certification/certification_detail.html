@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'certification/base.html' %}
+{% block content %}
+<div class="col-4">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{ object.certificate }}</h4>
+        </div>
+        <div class="card-body">
+            <img src="" alt="preview " width="300" height="250"
+                 class="d-inline-block align-text-top">
+            <h2 class="card-title pricing-card-title">{{ object.method }}</h2>
+            <ul class="list-unstyled mt-3 mb-4 text-center m-3">
+                <li>{{ object.type_certification }}</li>
+                <li>{{ object.technical_devices }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

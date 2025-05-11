@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'certification/base.html' %}
+{% block content %}
+<div class="col-12 mb-5">
+    <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'certification:create_certification' %}">
+        Добавить удостоверение
+    </a>
+</div>
+{% for object in object_list %}
+<div class="col-6" xmlns="http://www.w3.org/1999/html">
+    <div class="card mb-4 box-shadow">
+        <div class="card-body">
+            <h2 class="card-title pricing-card-title">{{ object.first_name }}</h2>
+            <div class="btn-group">
+                <p class="d-inline-flex gap-1">
+                    <a href="{% url 'certification:detail_certification' object.pk %}"
+                       class="btn btn-lg btn-block btn-outline-primary">
+                        Инфо
+                    </a>
+                    <a href="{% url 'certification:update_certification' object.pk %}"
+                       class="btn btn-lg btn-block btn-outline-primary">
+                        Обновить
+                    </a>
+                    {% if user.is_superuser%}
+                    <a href="{% url 'certification:delete_certification' object.pk %}"
+                       class="btn btn-lg btn-block btn-outline-primary">
+                        Удалить
+                    </a>
+                    {% endif %}
+                    <a class="btn btn-lg btn-block btn-outline-primary">
+                        1235
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
